@@ -55,7 +55,20 @@
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
     
+    <style>
+      /* Apply these styles only when the body has the 'dark-mode' class */
+      body.dark-mode b,
+      body.dark-mode strong {
+        color: cyan; /* Màu vàng gold sáng để nổi bật trên nền tối */
+        font-weight: bold;
+      }
 
+      body.dark-mode i {
+        color: cyan; /* Màu xanh nhạt để nổi bật trên nền tối */
+        font-style: italic;
+        font-weight: normal; /* Đảm bảo không bị in đậm */
+      }
+    </style>
   </head>
 
   <!-- Body -->
