@@ -55,20 +55,6 @@
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
     
-    <style>
-      /* Apply these styles only when the body has the 'dark-mode' class */
-      body.dark-mode b,
-      body.dark-mode strong {
-        color: cyan; /* Màu vàng gold sáng để nổi bật trên nền tối */
-        font-weight: bold;
-      }
-
-      body.dark-mode i {
-        color: cyan; /* Màu xanh nhạt để nổi bật trên nền tối */
-        font-style: italic;
-        font-weight: normal; /* Đảm bảo không bị in đậm */
-      }
-    </style>
   </head>
 
   <!-- Body -->
@@ -169,17 +155,27 @@
             </div>
           </div>
 
+          <style>
+            highlight {
+              color: #00FFFF; /* Cyan color */
+              font-weight: 900; /* Super strong bold */
+              text-shadow: 0 0 4px rgba(0, 255, 255, 0.5); /* Subtle cyan glow */
+              transition: all 0.3s ease; /* Smooth hover transition */
+            }
+            highlight:hover {
+              text-shadow: 0 0 8px rgba(0, 255, 255, 0.8); /* Enhanced glow on hover */
+            }
+          </style>
           <div class="clearfix">
-            <p>
-              Hi! I'm Nhan Hoang Quang, an undergraduate AI student and research assistant at <a href="https://aita-lab.github.io/" rel="external nofollow noopener" target="_blank">AiTA Lab</a>, FPT University. 
-              I'm passionate about <b>backend development, automation, computer vision, and quantum machine learning</b>. 
-              I enjoy building real-world tools, solving algorithmic challenges, and collaborating on open-source projects. 
-              Currently, I'm researching quantum-based image classification while also competing in programming contests. 
-              My main stack includes <b>Python, Flask, FastAPI, and PyTorch</b>. 
-              Outside of code, I love exploring new tech and contributing to educational projects. 
-              <i>Always open to exciting collaborations-let's build something awesome together!</i>
-            </p>
-
+            <ul>
+              <li>Hi! I'm Nhan Hoang Quang, an undergraduate AI student and research assistant at <a href="https://aita-lab.github.io/" rel="external nofollow noopener" target="_blank">AiTA Lab</a>, FPT University.</li>
+              <li>Passionate about <highlight>backend development, automation, computer vision, and quantum machine learning</highlight>.</li>
+              <li>Enjoy building real-world tools, solving algorithmic challenges, and collaborating on open-source projects.</li>
+              <li>Currently researching quantum-based image classification and competing in programming contests.</li>
+              <li>Main stack: <highlight>Python, Flask, FastAPI, and PyTorch</highlight>.</li>
+              <li>Love exploring new tech and contributing to educational projects.</li>
+              <li><i>Always open to exciting collaborations—let's build something awesome together!</i></li>
+            </ul>
           </div>
 
           <!-- News -->
