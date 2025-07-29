@@ -40,6 +40,81 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Custom Styles for Repo Cards -->
+    <style>
+      .repo-card-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      @media (min-width: 768px) {
+        .repo-card-wrapper {
+            width: 50%;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .repo-card-wrapper {
+            width: 33.333%;
+        }
+      }
+
+      .repo-card {
+        background-color: #fff;
+        border: 1px solid #e1e4e8;
+        color: #24292e;
+        border-radius: 6px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .repo-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+
+      .repo-card-title a {
+        color: #0366d6;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .repo-card-title a:hover {
+        text-decoration: underline;
+      }
+
+      .repo-card-description {
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        min-height: 40px; /* Ensures alignment */
+      }
+
+      .repo-card-stats {
+        font-size: 12px;
+      }
+
+      /* Dark Mode Styles */
+      body.dark-mode .repo-card {
+        background-color: #0d1117;
+        border-color: #30363d;
+        color: #c9d1d9;
+      }
+
+      body.dark-mode .repo-card-title a {
+        color: #58a6ff;
+      }
+
+      body.dark-mode .repo-card-description {
+        color: #8b949e !important;
+      }
+
+      body.dark-mode .repo-card-stats {
+        color: #8b949e;
+      }
+
+      body.dark-mode .repo-card:hover {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      }
+    </style>
+    
 
     <!-- Styles -->
     
@@ -132,22 +207,10 @@
           </header>
 
           <article>
-            <h2 id="github-users">My GitHub Profile</h2>
-
-            <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-              <div class="repo p-2 text-center">
-                <a href="https://github.com/blackfox20092006" rel="external nofollow noopener" target="_blank">
-                  <img class="repo-img-light w-100" alt="blackfox20092006" src="https://github-readme-stats.vercel.app/api/?username=blackfox20092006&theme=default&show_icons=true">
-                  <img class="repo-img-dark w-100" alt="blackfox20092006" src="https://github-readme-stats.vercel.app/api/?username=blackfox20092006&theme=dark&show_icons=true">
-                </a>
-              </div>
-            </div>
-
-            <hr>
-
+            
             <h4>blackfox20092006's Trophies</h4>
 
-            <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+            <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-center align-items-center">
               <div class="repo p-2 text-center">
                 <a href="https://github.com/ryo-ma/github-profile-trophy" rel="external nofollow noopener" target="_blank">
                   <img class="repo-img-light w-200" alt="blackfox20092006" src="https://github-profile-trophy.vercel.app/?username=blackfox20092006&theme=flat&locale=en&margin-w=15&margin-h=15&no-bg=true&rank=-C">
@@ -158,11 +221,11 @@
 
             <hr>
 
-            <h2 id="github-repositories">Top 10 Starred Repositories</h2>
+            <h2 id="github-repositories">Top Starred Repositories</h2>
 
             <!-- Container for dynamically loaded repositories -->
-            <div id="repos-container" class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-                <p id="loading-message">Loading repositories...</p>
+            <div id="repos-container" class="repositories d-flex flex-wrap justify-content-start align-items-stretch">
+                <p id="loading-message" class="w-100 text-center">Loading repositories...</p>
             </div>
 
           </article>
@@ -228,6 +291,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById("repos-container");
     const loadingMessage = document.getElementById("loading-message");
 
+    // Helper function to get language color
+    function getLanguageColor(language) {
+        const colors = {
+            'JavaScript': '#f1e05a',
+            'Python': '#3572A5',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'Jupyter Notebook': '#DA5B0B',
+            'TypeScript': '#2b7489',
+            'Java': '#b07219',
+        };
+        return colors[language] || '#c9d1d9'; // Default color
+    }
+
     // Fetch repositories from GitHub API, sorted by stars, top 10
     fetch(`https://api.github.com/users/${username}/repos?type=owner&sort=stargazers_count&direction=desc&per_page=10`)
         .then(response => {
@@ -241,27 +318,42 @@ document.addEventListener("DOMContentLoaded", function() {
             loadingMessage.style.display = 'none';
 
             if (repos.length === 0) {
-                container.innerHTML = '<p>No public repositories found.</p>';
+                container.innerHTML = '<p class="w-100 text-center">No public repositories found.</p>';
                 return;
             }
 
             // Generate HTML for each repository
             repos.forEach(repo => {
-                const repoCard = `
-                    <div class="repo p-2 text-center">
-                      <a href="${repo.html_url}" rel="external nofollow noopener" target="_blank">
-                        <img class="repo-img-light w-100" alt="${repo.owner.login}/${repo.name}" src="https://github-readme-stats.vercel.app/api/pin/?username=${repo.owner.login}&repo=${repo.name}&theme=default&show_owner=true">
-                        <img class="repo-img-dark w-100" alt="${repo.owner.login}/${repo.name}" src="https://github-readme-stats.vercel.app/api/pin/?username=${repo.owner.login}&repo=${repo.name}&theme=dark&show_owner=true">
-                      </a>
+                const repoCardHTML = `
+                    <div class="repo-card-wrapper p-2">
+                        <div class="repo-card p-3 h-100 d-flex flex-column">
+                            <h5 class="repo-card-title">
+                                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                                    <i class="far fa-bookmark mr-2"></i>${repo.name}
+                                </a>
+                            </h5>
+                            <p class="repo-card-description text-muted flex-grow-1">${repo.description || 'No description provided.'}</p>
+                            <div class="repo-card-stats d-flex justify-content-between">
+                                <span title="Language">
+                                    <i class="fas fa-circle" style="color: ${getLanguageColor(repo.language)};"></i> ${repo.language || 'N/A'}
+                                </span>
+                                <span title="Stars">
+                                    <i class="fas fa-star"></i> ${repo.stargazers_count}
+                                </span>
+                                <span title="Forks">
+                                    <i class="fas fa-code-branch"></i> ${repo.forks_count}
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 `;
-                container.innerHTML += repoCard;
+                container.innerHTML += repoCardHTML;
             });
         })
         .catch(error => {
             console.error('Error fetching GitHub repositories:', error);
             loadingMessage.style.display = 'none';
-            container.innerHTML = '<p>Failed to load repositories. Please try again later.</p>';
+            container.innerHTML = '<p class="w-100 text-center">Failed to load repositories. Please try again later.</p>';
         });
 });
 </script>
