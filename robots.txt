@@ -1,4 +1,4 @@
+Sitemap: https://blackfox20092006.github.io/hqnsitemapmain.xml
+
 User-agent: *
 Allow: /
-
-Sitemap: https://blackfox20092006.github.io/hqnsitemapmain.xml
