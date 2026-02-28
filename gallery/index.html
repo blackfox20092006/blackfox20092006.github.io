@@ -154,7 +154,7 @@
             <!-- Card 1 -->
             <div class="col-md-4 mb-4">
               <div class="card h-100 bg-transparent border-light">
-                <img src="./images/aeta2025.jpg" class="card-img-top rounded" alt="AETA 2025">
+                <img src="./images/aeta2025.jpg" class="card-img-top rounded" alt="AETA 2025" data-zoomable>
                 <div class="card-body">
                   <p class="card-text small">Attending the <strong>AETA 2025</strong> conference at Ton Duc Thang
                     University.</p>
@@ -180,6 +180,10 @@
           .card-img-top {
             object-fit: cover;
             height: 200px;
+          }
+
+          img[data-zoomable] {
+            cursor: zoom-in;
           }
 
           h2.year {
