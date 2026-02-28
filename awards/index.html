@@ -19,10 +19,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Publications | Quang Nhan Hoang</title>
-  <meta name="author" content="Duc Ngoc Minh Dang">
-  <meta name="description" content="Publications by categories in reversed chronological order.">
-  <meta name="keywords" content="dnmduc, meitoku, Duc Dang">
+  <title>Skills & Awards | Quang Nhan Hoang</title>
+  <meta name="author" content="Quang Nhan Hoang">
+  <meta name="description"
+    content="Quang Nhan Hoang, an undergraduate AI student and research assistant at AITA LAB, FPT University.">
+  <meta name="keywords" content="Quang Nhan Hoang, AI, Backend Developer, FPT University">
 
 
   <!-- Bootstrap & MDB -->
@@ -54,7 +55,7 @@
     href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
 
   <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="canonical" href="https://dnmduc.github.io/publications/">
+  <link rel="canonical" href="https://dnmduc.github.io/">
 
   <!-- Dark Mode -->
 
@@ -63,7 +64,6 @@
 
   <script src="../assets/js/theme.js"></script>
   <script src="../assets/js/dark_mode.js"></script>
-
 
 </head>
 
@@ -77,7 +77,7 @@
     <!-- Nav Bar -->
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
       <div class="container">
-        <a class="navbar-brand title font-weight-lighter" href="../index.html">Quang Nhan Hoang</a>
+
         <!-- Navbar Toggle -->
         <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,20 +98,20 @@
 
             <!-- Other pages -->
 
-
+            <!-- 
+              -->
             <li class="nav-item ">
-              <a class="nav-link" href="../publications/index.html">Publications<span
-                  class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../publications/index.html">Publications</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="../awards/index.html">Awards</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="../awards/index.html">Awards<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item ">
               <a class="nav-link" href="../contact/index.html">Contact</a>
             </li>
 
 
-            <!-- Toogle theme mode -->
+                        <!-- Toogle theme mode -->
             <li class="toggle-container">
               <button id="light-toggle" title="Change theme">
                 <i class="fas fa-moon"></i>
@@ -135,42 +135,33 @@
   <!-- Content -->
   <div class="container mt-5">
 
-    <!-- page.html -->
+    <!-- about.html -->
     <div class="post">
-
-      <header class="post-header">
-        <h1 class="post-title">Publications</h1>
-        <p class="post-description">Publications by categories in reversed chronological order.</p>
-      </header>
-
       <article>
+        <header class="post-header">
+          <h1 class="post-title">Skills & Awards</h1>
+          <p class="desc">My professional skills, contest results, and honors.</p>
+        </header>
 
         <style>
           highlight {
             color: #00FFFF;
-            /* Cyan color */
             font-weight: 900;
-            /* Super strong bold */
             text-shadow: 0 0 4px rgba(0, 255, 255, 0.5);
-            /* Subtle cyan glow */
             transition: all 0.3s ease;
-            /* Smooth hover transition */
           }
 
           highlight:hover {
             text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
-            /* Enhanced glow on hover */
           }
 
           .title {
             font-weight: bold;
             color: #E2B93B;
-            /* Gold-ish title */
           }
 
           .periodical em {
             color: #8FD14F;
-            /* Greenish/Lime conf/journal */
             font-weight: 500;
           }
         
@@ -188,230 +179,154 @@
           }
         </style>
 
-        <!-- _pages/publications.md -->
+        
+        <div class="skills-section">
+          <h2 class="year" style="margin-top: 10px;">Skills & Frameworks</h2>
+          
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #E2B93B; font-weight: bold;"><i class="fas fa-code"></i> Programming Languages</h4>
+                  <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+                    <li><strong><highlight>Python</highlight></strong> – Main language (automation, backend, AI, CP (PyPy 64 bit))</li>
+                    <li><strong><highlight>Bash/Shell</highlight></strong> – Automation scripts</li>
+                    <li><strong><highlight>SQL</highlight></strong> – Relational DB management</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+              <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #8FD14F; font-weight: bold;"><i class="fas fa-layer-group"></i> Frameworks & Libraries</h4>
+                  <ul style="list-style: none; padding-left: 0; line-height: 1.6;">
+                    <li><strong><highlight>Backend</highlight></strong>: Flask, FastAPI</li>
+                    <li><strong><highlight>CV/ML</highlight></strong>: OpenCV, Mediapipe, TensorFlow, PyTorch, scikit-learn</li>
+                    <li><strong><highlight>Quantum</highlight></strong>: Qiskit, PennyLane, BlueQubit</li>
+                    <li><strong><highlight>Tools</highlight></strong>: MoviePy, FFmpeg, BeautifulSoup, Selenium</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+              <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #00FFFF; font-weight: bold;"><i class="fas fa-database"></i> Database & DevOps tools</h4>
+                  <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+                    <li><strong><highlight>SQL DBs</highlight></strong>: SQLite, MySQL</li>
+                    <li><strong><highlight>NoSQL</highlight></strong>: MongoDB</li>
+                    <li><strong><highlight>Workflow</highlight></strong>: Git, GitHub, LaTeX</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+              <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
+                <div class="card-body">
+                  <h4 class="card-title" style="color: #FF5252; font-weight: bold;"><i class="fas fa-lightbulb"></i> I'm familiar with</h4>
+                  <ul style="list-style: none; padding-left: 0; line-height: 1.4; font-size: 0.95rem;">
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i>RESTful API design, MVC, OOP, FP</li>
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i>Async programming (async/await)</li>
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>ML workflows</strong>: preprocess → train → evaluate</li>
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>Quantum</strong>: quantum circuits & hybrid models, QTL</li>
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>CV</strong>: image processing, detection, classification</li>
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>Web scraping</strong> & headless browser tricks</li>
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>CP</strong>: common algorithms & data structures (tree, graph)</li>
+                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i>CI/CD basics, Git flow</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="year" id="awards">Awards & Achievements</h2>
         <div class="publications">
-          <h2 class="year">2026</h2>
-          <ol class="bibliography">
-            <li>
-              <!-- _layouts/bib.html -->
-              <div class="row">
-                <div class="col-sm-2 abbr"></div>
-
-                <!-- Entry bib key -->
-                <div id="Hoang2026HQMNet" class="col-sm-8">
-                  <!-- Title -->
-                  <div class="title">HQM-Net: A Hybrid Quantum-Classical Medical Imaging Architecture for Multi-Disease
-                    Classification across Heterogeneous Modalities</div>
-                  <!-- Author -->
-                  <div class="author">
-
-
-                    <highlight>Quang Nhan Hoang</highlight>, Minh Tri Pham, and Duc Ngoc Minh Dang
-                  </div>
-
-                  <!-- Journal/Book title and date -->
-
-
-                  <div class="periodical">
-                    <em>In Proceedings of the 7th International Conference on Machine Learning and Human-Computer
-                      Interaction (MLHMI 2026)</em>, Mar 2026
-                  </div>
-                  <div class="periodical">
-
-                  </div>
-
-                  <!-- Links/Buttons -->
-                  <div class="links">
-                  </div>
-
-                  <div class="badges">
-                    <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15"
-                      data-badge-type="2" data-badge-popover="right"></span>
-                    <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true"
-                      data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-                  </div>
-
-
-                </div>
-              </div>
-            </li>
-            <li>
-              <!-- _layouts/bib.html -->
-              <div class="row">
-                <div class="col-sm-2 abbr"></div>
-
-                <!-- Entry bib key -->
-                <div id="Hoang2026QMicroNet" class="col-sm-8">
-                  <!-- Title -->
-                  <div class="title">QMicroNet: A Quantum Hybrid Approach to Robust Cross-Domain Medical Image Analysis
-                  </div>
-                  <!-- Author -->
-                  <div class="author">
-
-
-                    <highlight>Quang Nhan Hoang</highlight>, Duc Nguyen Huu Dang, Thien Kim Hoang Vuong, and
-                    <a href="https://dnmduc.github.io" target="_blank">Duc Ngoc Minh Dang</a>
-                  </div>
-
-                  <!-- Journal/Book title and date -->
-
-
-                  <div class="periodical">
-                    <em>In Proceedings of the 4th International Conference on Advanced Sensing and Intelligent Systems
-                      (ICASIS 2026)</em>, May 2026
-                  </div>
-                  <div class="periodical">
-
-                  </div>
-
-                  <!-- Links/Buttons -->
-                  <div class="links">
-                  </div>
-
-                  <div class="badges">
-                    <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15"
-                      data-badge-type="2" data-badge-popover="right"></span>
-                    <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true"
-                      data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-                  </div>
-
-
-                </div>
-              </div>
-            </li>
-            <li>
-              <!-- _layouts/bib.html -->
-              <div class="row">
-                <div class="col-sm-2 abbr"></div>
-
-                <!-- Entry bib key -->
-                <div id="Hoang2026DisQuan" class="col-sm-8">
-                  <!-- Title -->
-                  <div class="title">DisQuan: A Hybrid Quantum-Classical Architecture for Plant Disease Detection in
-                    Staple and Specialty Crops</div>
-                  <!-- Author -->
-                  <div class="author">
-
-
-                    <highlight>Quang Nhan Hoang</highlight>, Duc Nguyen Huu Dang, Thien Kim Hoang Vuong, and
-                    <a href="https://dnmduc.github.io" target="_blank">Duc Ngoc Minh Dang</a>
-                  </div>
-
-                  <!-- Journal/Book title and date -->
-
-
-                  <div class="periodical">
-                    <em>In Proceedings of the 4th International Conference on Advanced Sensing and Intelligent Systems
-                      (ICASIS 2026)</em>, May 2026
-                  </div>
-                  <div class="periodical">
-
-                  </div>
-
-                  <!-- Links/Buttons -->
-                  <div class="links">
-                  </div>
-
-                  <div class="badges">
-                    <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15"
-                      data-badge-type="2" data-badge-popover="right"></span>
-                    <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true"
-                      data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-                  </div>
-
-
-                </div>
-              </div>
-            </li>
-          </ol>
-
           <h2 class="year">2025</h2>
           <ol class="bibliography">
             <li>
-              <!-- _layouts/bib.html -->
               <div class="row">
-                <div class="col-sm-2 abbr"></div>
-
-                <!-- Entry bib key -->
-                <div id="Hoang2025AETA" class="col-sm-8">
-                  <!-- Title -->
-                  <div class="title">Efficient Hybrid Quantum-Classical Convolutional Neural Network with Feature
-                    Propagation Layer for Multi-Class Image Classification</div>
-                  <!-- Author -->
-                  <div class="author">
-
-
-                    <highlight>Quang Nhan Hoang</highlight>, Thanh Trung Pham, and Duc Ngoc Minh Dang
+                <div class="col-sm-2 abbr">
+                  <abbr class="badge"
+                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Prize</abbr>
+                </div>
+                <div class="col-sm-10">
+                  <div class="title">
+                    <highlight>Creative Prize</highlight>
                   </div>
-
-                  <!-- Journal/Book title and date -->
-
-
-                  <div class="periodical">
-                    <em>In Proceedings of the 10th International Conference on Advanced Engineering – Theory and
-                      Applications (AETA 2025)</em>, May 2025
-                  </div>
-                  <div class="periodical">
-
-                  </div>
-
-                  <!-- Links/Buttons -->
-                  <div class="links">
-                  </div>
-
-                  <div class="badges">
-                    <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15"
-                      data-badge-type="2" data-badge-popover="right"></span>
-                    <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true"
-                      data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-                  </div>
-
-
+                  <div class="periodical"><em>SEAL Hackathon 2025 - FPT University</em></div>
                 </div>
               </div>
             </li>
           </ol>
 
+          <h2 class="year">2023</h2>
+          <ol class="bibliography">
+            <li>
+              <div class="row">
+                <div class="col-sm-2 abbr">
+                  <abbr class="badge"
+                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Top 1</abbr>
+                </div>
+                <div class="col-sm-10">
+                  <div class="title">
+                    <highlight>Top 1</highlight> (500/500 points)
+                  </div>
+                  <div class="periodical"><em>NAI Challenge (semifinal of HueICT)</em></div>
+                </div>
+              </div>
+            </li>
+          </ol>
 
+          <h2 class="year">2018</h2>
+          <ol class="bibliography">
+            <li>
+              <div class="row">
+                <div class="col-sm-2 abbr">
+                  <abbr class="badge"
+                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">First</abbr>
+                </div>
+                <div class="col-sm-10">
+                  <div class="title">
+                    <highlight>First Prize</highlight>
+                  </div>
+                  <div class="periodical"><em>District-level Young Informatics Contest (TINHOCTRE HCM)</em></div>
+                </div>
+              </div>
+            </li>
+          </ol>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <h2 class="year">2016 - Present</h2>
+          <ol class="bibliography">
+            <li>
+              <div class="row">
+                <div class="col-sm-2 abbr">
+                  <abbr class="badge"
+                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">CP</abbr>
+                </div>
+                <div class="col-sm-10">
+                  <div class="title">
+                    <highlight>Competitor</highlight>
+                  </div>
+                  <div class="periodical"><em>Codeforces & local STEM/English contests</em></div>
+                </div>
+              </div>
+            </li>
+          </ol>
         </div>
-
       </article>
-
     </div>
-
 
   </div>
 
   <!-- Footer -->
   <footer class="fixed-bottom">
     <div class="container mt-0">
-      © Copyright 2026 Duc Ngoc Minh Dang.
+      © Copyright 2025 Quang Nhan Hoang.
     </div>
   </footer>
 
@@ -427,23 +342,23 @@
     integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
 
   <!-- Masonry & imagesLoaded -->
-  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
     integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script defer src="../assets/js/masonry.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/js/masonry.js" type="text/javascript"></script>
 
   <!-- Medium Zoom JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js"
     integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
-  <script defer src="../assets/js/zoom.js"></script>
+  <script src="../assets/js/zoom.js"></script>
 
   <!-- Bootstrap Table -->
-  <script defer src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
 
   <!-- Load Common JS -->
   <script src="../assets/js/no_defer.js"></script>
-  <script defer src="../assets/js/common.js"></script>
-  <script defer src="../assets/js/copy_code.js" type="text/javascript"></script>
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/copy_code.js" type="text/javascript"></script>
 
 
   <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
@@ -459,7 +374,7 @@
   </script>
   <script defer type="text/javascript" id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
-  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
 
 
