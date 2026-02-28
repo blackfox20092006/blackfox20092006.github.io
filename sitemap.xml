@@ -5,28 +5,23 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://blackfox20092006.github.io/</loc>
-  <lastmod>2025-07-29T06:12:31+00:00</lastmod>
+  <loc>https://nhanhqq.github.io/index.html</loc>
+  <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://blackfox20092006.github.io/cv/</loc>
-  <lastmod>2025-07-29T06:12:31+00:00</lastmod>
+  <loc>https://nhanhqq.github.io/publications/index.html</loc>
+  <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://blackfox20092006.github.io/publications/</loc>
-  <lastmod>2025-07-29T06:12:31+00:00</lastmod>
+  <loc>https://nhanhqq.github.io/awards/index.html</loc>
+  <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://blackfox20092006.github.io/repositories/</loc>
-  <lastmod>2025-07-29T06:12:31+00:00</lastmod>
+  <loc>https://nhanhqq.github.io/contact/index.html</loc>
+  <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://blackfox20092006.github.io/cv/cv.pdf</loc>
-  <lastmod>2025-07-29T06:12:31+00:00</lastmod>
-  <priority>0.64</priority>
 </url>
 </urlset>
