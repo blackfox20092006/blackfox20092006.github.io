@@ -139,6 +139,15 @@
       <header class="post-header">
         <h1 class="post-title">Publications</h1>
         <p class="post-description">Publications by categories in reversed chronological order.</p>
+
+        <div class="publication-legend">
+          <div class="legend-item"><span class="legend-color journal"></span> denotes journal</div>
+          <div class="legend-item"><span class="legend-color conference"></span> denotes conference</div>
+          <div class="legend-item"><span class="legend-color preprint"></span> denotes preprint</div>
+          <div class="search-container">
+            <input type="text" id="publication-search" placeholder="Search documents with keywords">
+          </div>
+        </div>
       </header>
 
       <article>
@@ -186,6 +195,104 @@
             display: block !important;
             clear: both !important;
           }
+
+          .abbr {
+            height: auto !important;
+            margin-bottom: 1rem !important;
+            text-align: center;
+          }
+
+          .abbr p {
+            margin-bottom: 0.5rem;
+          }
+
+          .abbr .badge {
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            min-width: 60px;
+          }
+
+          .badge-journal {
+            background: linear-gradient(135deg, #7a0909 0%, #3e0404 100%);
+          }
+
+          .badge-conference {
+            background: linear-gradient(135deg, #1b5e20 0%, #0d2e10 100%);
+          }
+
+          .badge-preprint {
+            background: linear-gradient(135deg, #0277bd 0%, #01436a 100%);
+          }
+
+          .publication-legend {
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+          }
+
+          .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: var(--global-text-color);
+          }
+
+          .legend-color {
+            width: 25px;
+            height: 15px;
+            margin-right: 12px;
+            border-radius: 2px;
+          }
+
+          .legend-color.journal {
+            background: #7a0909;
+          }
+
+          .legend-color.conference {
+            background: #1b5e20;
+          }
+
+          .legend-color.preprint {
+            background: #0277bd;
+          }
+
+          .search-container {
+            margin-top: 20px;
+            max-width: 500px;
+          }
+
+          #publication-search {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid var(--global-divider-color);
+            background-color: var(--global-code-bg-color);
+            color: var(--global-text-color);
+            outline: none;
+            transition: border-color 0.3s ease;
+          }
+
+          #publication-search:focus {
+            border-color: var(--global-theme-color);
+          }
+
+          .publication-preview {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+            transition: transform 0.3s ease;
+            cursor: zoom-in;
+          }
+
+          .publication-preview:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+          }
         </style>
 
         <!-- _pages/publications.md -->
@@ -195,10 +302,13 @@
             <li>
               <!-- _layouts/bib.html -->
               <div class="row">
-                <div class="col-sm-2 abbr"></div>
+                <div class="col-sm-3 abbr">
+                  <abbr class="badge badge-conference">MLHMI</abbr>
+                  <img src="./images/hqmnet.png" class="publication-preview z-depth-1 rounded" data-zoomable>
+                </div>
 
                 <!-- Entry bib key -->
-                <div id="Hoang2026HQMNet" class="col-sm-8">
+                <div id="Hoang2026HQMNet" class="col-sm-9">
                   <!-- Title -->
                   <div class="title">HQM-Net: A Hybrid Quantum-Classical Medical Imaging Architecture for Multi-Disease
                     Classification across Heterogeneous Modalities</div>
@@ -239,10 +349,13 @@
             <li>
               <!-- _layouts/bib.html -->
               <div class="row">
-                <div class="col-sm-2 abbr"></div>
+                <div class="col-sm-3 abbr">
+                  <abbr class="badge badge-conference">ICASIS</abbr>
+                  <img src="./images/qmicronet.png" class="publication-preview z-depth-1 rounded" data-zoomable>
+                </div>
 
                 <!-- Entry bib key -->
-                <div id="Hoang2026QMicroNet" class="col-sm-8">
+                <div id="Hoang2026QMicroNet" class="col-sm-9">
                   <!-- Title -->
                   <div class="title">QMicroNet: A Quantum Hybrid Approach to Robust Cross-Domain Medical Image Analysis
                   </div>
@@ -283,10 +396,13 @@
             <li>
               <!-- _layouts/bib.html -->
               <div class="row">
-                <div class="col-sm-2 abbr"></div>
+                <div class="col-sm-3 abbr">
+                  <abbr class="badge badge-conference">ICASIS</abbr>
+                  <img src="./images/disquan.png" class="publication-preview z-depth-1 rounded" data-zoomable>
+                </div>
 
                 <!-- Entry bib key -->
-                <div id="Hoang2026DisQuan" class="col-sm-8">
+                <div id="Hoang2026DisQuan" class="col-sm-9">
                   <!-- Title -->
                   <div class="title">DisQuan: A Hybrid Quantum-Classical Architecture for Plant Disease Detection in
                     Staple and Specialty Crops</div>
@@ -331,10 +447,13 @@
             <li>
               <!-- _layouts/bib.html -->
               <div class="row">
-                <div class="col-sm-2 abbr"></div>
+                <div class="col-sm-3 abbr">
+                  <abbr class="badge badge-conference">AETA</abbr>
+                  <img src="./images/aeta2025.jpg" class="publication-preview z-depth-1 rounded" data-zoomable>
+                </div>
 
                 <!-- Entry bib key -->
-                <div id="Hoang2025AETA" class="col-sm-8">
+                <div id="Hoang2025AETA" class="col-sm-9">
                   <!-- Title -->
                   <div class="title">Efficient Hybrid Quantum-Classical Convolutional Neural Network with Feature
                     Propagation Layer for Multi-Class Image Classification</div>
@@ -437,6 +556,28 @@
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js"
     integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="../assets/js/zoom.js"></script>
+
+  <!-- Publication filtering script -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#publication-search").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+
+        // Filter bibliography items
+        $(".bibliography li").each(function () {
+          var text = $(this).text().toLowerCase();
+          $(this).toggle(text.indexOf(value) > -1);
+        });
+
+        // Hide/show years based on visibility of their items
+        $("h2.year").each(function () {
+          var nextOl = $(this).next("ol.bibliography");
+          var visibleItems = nextOl.children("li:visible").length;
+          $(this).toggle(visibleItems > 0);
+        });
+      });
+    });
+  </script>
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
