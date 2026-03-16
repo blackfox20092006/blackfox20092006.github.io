@@ -521,17 +521,42 @@
         }
 
         // 5. CHAT LOGIC (Placeholder for user logic)
-        function handleChat() {
+        async function handleChat() {
             const text = sanitize(promptInput.value);
             if (!text) return;
+            
             addMessage('user', text);
             promptInput.value = '';
             promptInput.style.height = 'auto';
 
-            // Placeholder logic: AI will acknowledge but stay silent until user implements backend
-            setTimeout(() => {
-                addMessage('ai', "Tôi đã nhận được thông tin. Hiện tại tôi đang tập trung vào chẩn đoán lâm sàng, bạn có thể xem kết quả phân tích ở trên.");
-            }, 600);
+            // Show typing indicator
+            const typingId = 'typing-' + Date.now();
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message ai';
+            typingDiv.id = typingId;
+            typingDiv.innerHTML = `<div class="avatar ai">AI</div><div class="msg-text"><i class="fas fa-circle-notch fa-spin"></i> Đang suy nghĩ...</div>`;
+            chatBox.appendChild(typingDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                const res = await fetch(`${API_BASE}/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: text })
+                });
+                
+                if (!res.ok) throw new Error("API response error");
+                
+                const data = await res.json();
+                
+                // Remove typing indicator and add final response
+                typingDiv.remove();
+                addMessage('ai', data.response || "Tôi không nhận được phản hồi hợp lệ.");
+            } catch (err) {
+                typingDiv.remove();
+                addMessage('ai', "Lỗi: Không thể kết nối tới chatbot AI. Hãy chắc chắn máy chủ API đang chạy.");
+                console.error(err);
+            }
         }
 
         // UTILS
