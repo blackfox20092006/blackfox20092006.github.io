@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
             --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
             --shadow-glow: 0 0 15px rgba(13, 148, 136, 0.3);
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -27,6 +29,7 @@
             scrollbar-width: thin;
             scrollbar-color: var(--accent-color) transparent;
         }
+
         body {
             font-family: 'Outfit', sans-serif;
             background: radial-gradient(circle at top left, #1e293b, #111827);
@@ -37,6 +40,7 @@
             align-items: center;
             overflow: hidden;
         }
+
         .app-container {
             width: 98%;
             max-width: 1400px;
@@ -52,6 +56,7 @@
             position: relative;
             transition: all 0.3s ease;
         }
+
         @media (max-width: 1200px) {
             .app-container {
                 width: 100%;
@@ -59,6 +64,7 @@
                 border-radius: 0;
             }
         }
+
         .app-header {
             padding: 24px 40px;
             background: rgba(13, 148, 136, 0.15);
@@ -67,6 +73,7 @@
             align-items: center;
             gap: 20px;
         }
+
         .logo-box {
             width: 50px;
             height: 50px;
@@ -78,20 +85,24 @@
             box-shadow: var(--shadow-glow);
             flex-shrink: 0;
         }
+
         .logo-box i {
             font-size: 1.6rem;
             color: white;
         }
+
         .header-text h1 {
             font-size: 1.4rem;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
+
         .header-text p {
             font-size: 0.9rem;
             color: var(--text-dim);
             font-weight: 400;
         }
+
         .chat-area {
             flex: 1;
             padding: 40px;
@@ -100,6 +111,7 @@
             flex-direction: column;
             gap: 24px;
         }
+
         .msg {
             max-width: 75%;
             display: flex;
@@ -107,16 +119,19 @@
             gap: 8px;
             animation: slideUp 0.35s ease-out forwards;
         }
+
         @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .msg-bubble {
             padding: 14px 20px;
             border-radius: 18px;
@@ -124,35 +139,43 @@
             line-height: 1.5;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
+
         .msg.user {
             align-self: flex-end;
         }
+
         .msg.user .msg-bubble {
             background: var(--bubble-user);
             color: white;
             border-bottom-right-radius: 4px;
         }
+
         .msg.ai {
             align-self: flex-start;
         }
+
         .msg.ai .msg-bubble {
             background: var(--bubble-ai);
             color: var(--text-main);
             border-bottom-left-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         .msg-time {
             font-size: 0.7rem;
             color: var(--text-dim);
             margin: 0 5px;
         }
+
         .msg.user .msg-time {
             text-align: right;
         }
+
         .input-section {
             padding: 30px;
             background: linear-gradient(to top, rgba(17, 24, 39, 0.8), transparent);
         }
+
         .input-bar {
             background: rgba(55, 65, 81, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -164,6 +187,7 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             backdrop-filter: blur(8px);
         }
+
         .upload-trigger {
             width: 44px;
             height: 44px;
@@ -178,11 +202,13 @@
             font-size: 1.2rem;
             transition: all 0.2s;
         }
+
         .upload-trigger:hover {
             background: var(--accent-color);
             transform: scale(1.05);
             box-shadow: var(--shadow-glow);
         }
+
         #promptInput {
             flex: 1;
             background: transparent;
@@ -195,6 +221,7 @@
             max-height: 120px;
             resize: none;
         }
+
         .send-btn {
             background: var(--accent-color);
             color: white;
@@ -208,15 +235,18 @@
             gap: 8px;
             font-size: 0.9rem;
         }
+
         .send-btn:hover {
             background: var(--accent-hover);
             box-shadow: var(--shadow-glow);
         }
+
         .typing {
             display: flex;
             gap: 4px;
             padding-top: 5px;
         }
+
         .dot {
             width: 6px;
             height: 6px;
@@ -224,22 +254,35 @@
             border-radius: 50%;
             animation: blink 1.4s infinite both;
         }
+
         .dot:nth-child(2) {
             animation-delay: 0.2s;
         }
+
         .dot:nth-child(3) {
             animation-delay: 0.4s;
         }
+
         @keyframes blink {
-            0%, 80%, 100% { opacity: 0; }
-            40% { opacity: 1; }
+
+            0%,
+            80%,
+            100% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 1;
+            }
         }
+
         .msg-image {
             max-width: 100%;
             border-radius: 12px;
             margin-bottom: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         #modal-overlay {
             display: none;
             position: fixed;
@@ -253,6 +296,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .modal {
             background: #1f2937;
             padding: 30px;
@@ -262,6 +306,7 @@
             border: 1px solid var(--accent-color);
             box-shadow: var(--shadow-soft);
         }
+
         .btn-modal {
             margin-top: 20px;
             background: var(--accent-color);
@@ -273,6 +318,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="app-container">
         <header class="app-header">
@@ -287,14 +333,16 @@
         <div class="chat-area" id="chatHistory">
             <div class="msg ai">
                 <div class="msg-bubble">
-                    Chào bạn! Tôi là trợ lý AI chuyên về sức khỏe tiểu đường. Tôi có thể giúp bạn phân tích ảnh mống mắt hoặc giải đáp các thắc mắc về bệnh tiểu đường các loại.
+                    Chào bạn! Tôi là trợ lý AI chuyên về sức khỏe tiểu đường. Tôi có thể giúp bạn phân tích ảnh mống mắt
+                    hoặc giải đáp các thắc mắc về bệnh tiểu đường các loại.
                 </div>
                 <div class="msg-time">Vừa xong</div>
             </div>
         </div>
         <div class="input-section">
             <div class="input-bar">
-                <button class="upload-trigger" title="Tải ảnh mống mắt" onclick="document.getElementById('fileInput').click()">
+                <button class="upload-trigger" title="Tải ảnh mống mắt"
+                    onclick="document.getElementById('fileInput').click()">
                     <i class="fas fa-plus"></i>
                 </button>
                 <textarea id="promptInput" rows="1" placeholder="Nhập câu hỏi tại đây..."></textarea>
@@ -311,12 +359,13 @@
         <div class="modal">
             <h3 id="modalTitle">Thông báo</h3>
             <p id="modalBody">...</p>
-            <button class="btn-modal" onclick="document.getElementById('modal-overlay').style.display='none'">Đã hiểu</button>
+            <button class="btn-modal" onclick="document.getElementById('modal-overlay').style.display='none'">Đã
+                hiểu</button>
         </div>
     </div>
     <script>
         DisableDevtool({ ondevtoolopen: () => { window.location.href = "about:blank"; } });
-        const API_BASE = "https://2873-109-237-69-254.ngrok-free.app";
+        const API_BASE = "https://0510-109-237-69-254.ngrok-free.app";
         const ui = {
             history: document.getElementById('chatHistory'),
             prompt: document.getElementById('promptInput'),
@@ -460,4 +509,5 @@
         });
     </script>
 </body>
+
 </html>
