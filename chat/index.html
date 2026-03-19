@@ -359,8 +359,7 @@
         <div class="modal">
             <h3 id="modalTitle">Thông báo</h3>
             <p id="modalBody">...</p>
-            <button class="btn-modal" onclick="document.getElementById('modal-overlay').style.display='none'">Đã
-                hiểu</button>
+            <button class="btn-modal" onclick="document.getElementById('modal-overlay').style.display='none'">Đã hiểu</button>
         </div>
     </div>
     <script>
@@ -372,23 +371,7 @@
             fileIn: document.getElementById('fileInput'),
             canvas: document.getElementById('resizeCanvas')
         };
-        let lastActionTime = 0;
-        const COOLDOWN_MS = 2000;
-        function checkCooldown() {
-            // const now = Date.now();
-            // if (now - lastActionTime < COOLDOWN_MS) {
-            //     const remaining = Math.ceil((COOLDOWN_MS - (now - lastActionTime)) / 1000);
-            //     showModal("Spam Protection", `Bạn đang thao tác quá nhanh. Vui lòng đợi ${remaining} giây.`);
-            //     return false;
-            // }
-            // lastActionTime = now;
-            return true;
-        }
         ui.fileIn.onchange = async (e) => {
-            if (!checkCooldown()) {
-                ui.fileIn.value = '';
-                return;
-            }
             const file = e.target.files[0];
             if (!file) return;
             if (!file.type.startsWith('image/')) {
@@ -425,12 +408,11 @@
             const fd = new FormData();
             fd.append('file', blob, 'prediction_256.jpg');
             try {
-                const res = await fetch(`${API_BASE}/predict_image`, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
-                if (res.status === 429) {
-                    removeTypingIndicator(typingId);
-                    showModal("Giới hạn", "Vui lòng đợi 15 phút do gửi quá nhiều yêu cầu.");
-                    return;
-                }
+                const res = await fetch(`${API_BASE}/predict_image`, { 
+                    method: 'POST', 
+                    body: fd, 
+                    headers: { 'Accept': 'application/json' } 
+                });
                 const data = await res.json();
                 removeTypingIndicator(typingId);
                 if (data.pic) {
@@ -445,7 +427,6 @@
             }
         }
         async function handleTextChat() {
-            if (!checkCooldown()) return;
             const text = ui.prompt.value.trim();
             if (!text) return;
             addMessage('user', text);
@@ -459,11 +440,6 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ prompt: text })
                 });
-                if (res.status === 429) {
-                    removeTypingIndicator(typingId);
-                    showModal("Giới hạn", "Thao tác quá nhanh, hãy thử lại sau.");
-                    return;
-                }
                 const data = await res.json();
                 removeTypingIndicator(typingId);
                 addMessage('ai', data.response || "Rất tiếc, tôi chưa hiểu ý bạn.");
@@ -509,5 +485,4 @@
         });
     </script>
 </body>
-
 </html>
