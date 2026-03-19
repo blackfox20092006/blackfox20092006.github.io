@@ -359,12 +359,13 @@
         <div class="modal">
             <h3 id="modalTitle">Thông báo</h3>
             <p id="modalBody">...</p>
-            <button class="btn-modal" onclick="document.getElementById('modal-overlay').style.display='none'">Đã hiểu</button>
+            <button class="btn-modal" onclick="document.getElementById('modal-overlay').style.display='none'">Đã
+                hiểu</button>
         </div>
     </div>
     <script>
         DisableDevtool({ ondevtoolopen: () => { window.location.href = "about:blank"; } });
-        const API_BASE = "https://b521-109-237-69-254.ngrok-free.app";
+        const API_BASE = "https://d284-109-237-69-254.ngrok-free.app";
         const ui = {
             history: document.getElementById('chatHistory'),
             prompt: document.getElementById('promptInput'),
@@ -408,10 +409,10 @@
             const fd = new FormData();
             fd.append('file', blob, 'prediction_256.jpg');
             try {
-                const res = await fetch(`${API_BASE}/predict_image`, { 
-                    method: 'POST', 
-                    body: fd, 
-                    headers: { 'Accept': 'application/json' } 
+                const res = await fetch(`${API_BASE}/predict_image`, {
+                    method: 'POST',
+                    body: fd,
+                    headers: { 'Accept': 'application/json' }
                 });
                 const data = await res.json();
                 removeTypingIndicator(typingId);
@@ -485,4 +486,5 @@
         });
     </script>
 </body>
+
 </html>
