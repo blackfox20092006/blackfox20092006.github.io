@@ -375,13 +375,13 @@
         let lastActionTime = 0;
         const COOLDOWN_MS = 2000;
         function checkCooldown() {
-            const now = Date.now();
-            if (now - lastActionTime < COOLDOWN_MS) {
-                const remaining = Math.ceil((COOLDOWN_MS - (now - lastActionTime)) / 1000);
-                showModal("Spam Protection", `Bạn đang thao tác quá nhanh. Vui lòng đợi ${remaining} giây.`);
-                return false;
-            }
-            lastActionTime = now;
+            // const now = Date.now();
+            // if (now - lastActionTime < COOLDOWN_MS) {
+            //     const remaining = Math.ceil((COOLDOWN_MS - (now - lastActionTime)) / 1000);
+            //     showModal("Spam Protection", `Bạn đang thao tác quá nhanh. Vui lòng đợi ${remaining} giây.`);
+            //     return false;
+            // }
+            // lastActionTime = now;
             return true;
         }
         ui.fileIn.onchange = async (e) => {
