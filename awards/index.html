@@ -21,8 +21,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Skills & Awards | Quang Nhan Hoang</title>
   <meta name="author" content="Quang Nhan Hoang">
-  <meta name="description" content="Quang Nhan Hoang is an undergraduate researcher at FPT University, specializing in Backend, Quantum Machine Learning, and Computer Vision. Discover my projects, publications, and skills.">
-  <meta name="keywords" content="Quang Nhan Hoang, AI, Quantum Machine Learning, Machine Learning, Backend Developer, FPT University, Computer Vision, Portfolio">
+  <meta name="description"
+    content="Quang Nhan Hoang is an undergraduate researcher at FPT University, specializing in Backend, Quantum Machine Learning, and Computer Vision. Discover my projects, publications, and skills.">
+  <meta name="keywords"
+    content="Quang Nhan Hoang, AI, Quantum Machine Learning, Machine Learning, Backend Developer, FPT University, Computer Vision, Portfolio">
 
   <!-- Bootstrap & MDB -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -87,33 +89,33 @@
         </button>
 
         <div class="collapse navbar-collapse text-right" id="navbarNav">
-                      <ul class="navbar-nav ml-auto flex-nowrap">
-              <li class="nav-item ">
-                <a class="nav-link" href="../index.html">About</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="../publications/index.html">Publications</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="../awards/index.html">Awards<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="../contact/index.html">Contact</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="../people/index.html">People</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="../gallery/index.html">Gallery</a>
-              </li>
-              <!-- Toogle theme mode -->
-              <li class="toggle-container">
-                <button id="light-toggle" title="Change theme">
-                  <i class="fas fa-moon"></i>
-                  <i class="fas fa-sun"></i>
-                </button>
-              </li>
-            </ul>
+          <ul class="navbar-nav ml-auto flex-nowrap">
+            <li class="nav-item ">
+              <a class="nav-link" href="../index.html">About</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../publications/index.html">Publications</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../awards/index.html">Awards<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../contact/index.html">Contact</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../people/index.html">People</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="../gallery/index.html">Gallery</a>
+            </li>
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -140,13 +142,17 @@
 
         <style>
           highlight {
-            color: #00FFFF;
+            color: #008B8B;
             font-weight: 900;
-            text-shadow: 0 0 4px rgba(0, 255, 255, 0.5);
             transition: all 0.3s ease;
           }
 
-          highlight:hover {
+          html[data-theme="dark"] highlight {
+            color: #00FFFF;
+            text-shadow: 0 0 4px rgba(0, 255, 255, 0.5);
+          }
+
+          html[data-theme="dark"] highlight:hover {
             text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
           }
 
@@ -159,79 +165,120 @@
             color: #8FD14F;
             font-weight: 500;
           }
-        
+
           h2.year {
-            color: #FF5252 !important; /* Standout neon/coral red */
+            color: #FF5252 !important;
+            /* Standout neon/coral red */
             font-weight: 900;
             text-shadow: 0 0 5px rgba(255, 82, 82, 0.4);
             margin-top: 50px !important;
             margin-bottom: 20px !important;
             border-bottom: 2px solid rgba(255, 82, 82, 0.6) !important;
             padding-bottom: 15px !important;
-            text-align: right !important; /* Force to right like standard al-folio, or left if u want. We'll keep right */
+            text-align: right !important;
+            /* Force to right like standard al-folio, or left if u want. We'll keep right */
             display: block !important;
             clear: both !important;
           }
         </style>
 
-        
+
         <div class="skills-section">
           <h2 class="year" style="margin-top: 10px;">Skills & Frameworks</h2>
-          
+
           <div class="row">
             <div class="col-md-6 mb-4">
               <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #E2B93B; font-weight: bold;"><i class="fas fa-code"></i> Programming Languages</h4>
+                  <h4 class="card-title" style="color: #E2B93B; font-weight: bold;"><i class="fas fa-code"></i>
+                    Programming Languages</h4>
                   <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-                    <li><strong><highlight>Python</highlight></strong> – Main language (automation, backend, AI, CP (PyPy 64 bit))</li>
-                    <li><strong><highlight>Bash/Shell</highlight></strong> – Automation scripts</li>
-                    <li><strong><highlight>SQL</highlight></strong> – Relational DB management</li>
+                    <li><strong>
+                        <highlight>Python</highlight>
+                      </strong> – Main language (automation, backend, AI, CP (PyPy 64 bit))</li>
+                    <li><strong>
+                        <highlight>Bash/Shell</highlight>
+                      </strong> – Automation scripts</li>
+                    <li><strong>
+                        <highlight>SQL</highlight>
+                      </strong> – Relational DB management</li>
                   </ul>
                 </div>
               </div>
             </div>
-            
+
             <div class="col-md-6 mb-4">
               <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #8FD14F; font-weight: bold;"><i class="fas fa-layer-group"></i> Frameworks & Libraries</h4>
+                  <h4 class="card-title" style="color: #8FD14F; font-weight: bold;"><i class="fas fa-layer-group"></i>
+                    Frameworks & Libraries</h4>
                   <ul style="list-style: none; padding-left: 0; line-height: 1.6;">
-                    <li><strong><highlight>Backend</highlight></strong>: Flask, FastAPI</li>
-                    <li><strong><highlight>CV/ML</highlight></strong>: OpenCV, Mediapipe, TensorFlow, PyTorch, scikit-learn</li>
-                    <li><strong><highlight>Quantum</highlight></strong>: Qiskit, PennyLane, BlueQubit</li>
-                    <li><strong><highlight>Tools</highlight></strong>: MoviePy, FFmpeg, BeautifulSoup, Selenium</li>
+                    <li><strong>
+                        <highlight>Backend</highlight>
+                      </strong>: Flask, FastAPI</li>
+                    <li><strong>
+                        <highlight>CV/ML</highlight>
+                      </strong>: OpenCV, Mediapipe, TensorFlow, PyTorch, scikit-learn</li>
+                    <li><strong>
+                        <highlight>Quantum</highlight>
+                      </strong>: Qiskit, PennyLane, BlueQubit</li>
+                    <li><strong>
+                        <highlight>Tools</highlight>
+                      </strong>: MoviePy, FFmpeg, BeautifulSoup, Selenium</li>
                   </ul>
                 </div>
               </div>
             </div>
-            
+
             <div class="col-md-6 mb-4">
               <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #00FFFF; font-weight: bold;"><i class="fas fa-database"></i> Database & DevOps tools</h4>
+                  <h4 class="card-title" style="color: #00FFFF; font-weight: bold;"><i class="fas fa-database"></i>
+                    Database & DevOps tools</h4>
                   <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-                    <li><strong><highlight>SQL DBs</highlight></strong>: SQLite, MySQL</li>
-                    <li><strong><highlight>NoSQL</highlight></strong>: MongoDB</li>
-                    <li><strong><highlight>Workflow</highlight></strong>: Git, GitHub, LaTeX</li>
+                    <li><strong>
+                        <highlight>SQL DBs</highlight>
+                      </strong>: SQLite, MySQL</li>
+                    <li><strong>
+                        <highlight>NoSQL</highlight>
+                      </strong>: MongoDB</li>
+                    <li><strong>
+                        <highlight>Workflow</highlight>
+                      </strong>: Git, GitHub, LaTeX</li>
                   </ul>
                 </div>
               </div>
             </div>
-            
+
             <div class="col-md-6 mb-4">
               <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #FF5252; font-weight: bold;"><i class="fas fa-lightbulb"></i> I'm familiar with</h4>
+                  <h4 class="card-title" style="color: #FF5252; font-weight: bold;"><i class="fas fa-lightbulb"></i> I'm
+                    familiar with</h4>
                   <ul style="list-style: none; padding-left: 0; line-height: 1.4; font-size: 0.95rem;">
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i>RESTful API design, MVC, OOP, FP</li>
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i>Async programming (async/await)</li>
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>ML workflows</strong>: preprocess → train → evaluate</li>
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>Quantum</strong>: quantum circuits & hybrid models, QTL</li>
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>CV</strong>: image processing, detection, classification</li>
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>Web scraping</strong> & headless browser tricks</li>
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>CP</strong>: common algorithms & data structures (tree, graph)</li>
-                    <li><i class="fas fa-angle-right" style="color: var(--global-theme-color); margin-right: 5px;"></i>CI/CD basics, Git flow</li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i>RESTful API design, MVC, OOP,
+                      FP</li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i>Async programming (async/await)
+                    </li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>ML workflows</strong>:
+                      preprocess → train → evaluate</li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>Quantum</strong>:
+                      quantum circuits & hybrid models, QTL</li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>CV</strong>: image
+                      processing, detection, classification</li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>Web scraping</strong> &
+                      headless browser tricks</li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i><strong>CP</strong>: common
+                      algorithms & data structures (tree, graph)</li>
+                    <li><i class="fas fa-angle-right"
+                        style="color: var(--global-theme-color); margin-right: 5px;"></i>CI/CD basics, Git flow</li>
                   </ul>
                 </div>
               </div>
@@ -241,6 +288,55 @@
 
         <h2 class="year" id="awards">Awards & Achievements</h2>
         <div class="publications">
+          <h2 class="year">2026</h2>
+          <ol class="bibliography">
+            <li>
+              <div class="row">
+                <div class="col-sm-2 abbr">
+                  <abbr class="badge"
+                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Top 100</abbr>
+                </div>
+                <div class="col-sm-10">
+                  <div class="title">
+                    <highlight>TOP 100 Students</highlight> with outstanding academic achievement
+                  </div>
+                  <div class="periodical"><em>Jun 2026</em></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-sm-2 abbr">
+                  <abbr class="badge"
+                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">2nd Prize</abbr>
+                </div>
+                <div class="col-sm-10">
+                  <div class="title">
+                    <highlight>Second prize</highlight> in Student Research Competition AI-FIRST CHIPS: DRIVING THE
+                    DIGITAL TRANSFORMATION
+                  </div>
+                  <div class="periodical"><em>Apr 2026 - FPT University</em></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-sm-2 abbr">
+                  <abbr class="badge"
+                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Best
+                    Presentation</abbr>
+                </div>
+                <div class="col-sm-10">
+                  <div class="title">
+                    <highlight>Best Paper Presentation</highlight>
+                  </div>
+                  <div class="periodical"><em>Mar 2026 - The 7th International Conference on Machine Learning and
+                      Human-Computer Interaction, Tokyo, Japan</em></div>
+                </div>
+              </div>
+            </li>
+          </ol>
+
           <h2 class="year">2025</h2>
           <ol class="bibliography">
             <li>

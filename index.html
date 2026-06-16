@@ -166,14 +166,17 @@
 
         <style>
           highlight {
-            color: #00FFFF;
-            /* Cyan color */
+            color: #008B8B;
             font-weight: 900;
-            text-shadow: 0 0 4px rgba(0, 255, 255, 0.5);
             transition: all 0.3s ease;
           }
 
-          highlight:hover {
+          html[data-theme="dark"] highlight {
+            color: #00FFFF;
+            text-shadow: 0 0 4px rgba(0, 255, 255, 0.5);
+          }
+
+          html[data-theme="dark"] highlight:hover {
             text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
           }
 
