@@ -165,13 +165,18 @@
             }
             .email-badge {
                 padding: 5px 12px;
-                background-color: #2F363D;
+                background-color: var(--global-bg-color);
+                border: 1px solid var(--global-divider-color);
                 border-radius: 4px;
                 font-family: monospace;
                 font-size: 1rem;
                 display: inline-block;
                 margin-top: 5px;
                 margin-right: 10px;
+            }
+            html[data-theme="dark"] .email-badge {
+                background-color: #2F363D;
+                border-color: transparent;
             }
           </style>
 
