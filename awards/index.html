@@ -264,6 +264,279 @@
 
 
          
+        
+    /* ============================================
+       ANIMATIONS - GPU-accelerated & lightweight
+       ============================================ */
+
+    /* --- Keyframes --- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-25px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(156, 142, 199, 0.3); }
+      50% { box-shadow: 0 0 12px 4px rgba(156, 142, 199, 0.15); }
+    }
+
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    @keyframes borderGlow {
+      0%, 100% { border-color: var(--global-divider-color); }
+      50% { border-color: var(--global-theme-color); }
+    }
+
+    @keyframes titleShimmer {
+      0% { background-position: -100% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes subtleBounce {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-4px); }
+      60% { transform: translateY(-2px); }
+    }
+
+    /* --- Reduced motion --- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* --- Post header animations --- */
+    .post-header {
+      animation: fadeInUp 0.7s ease-out both;
+    }
+
+    .post-title {
+      background: linear-gradient(90deg, var(--global-theme-color) 0%, var(--global-accent-cyan) 50%, var(--global-theme-color) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: titleShimmer 4s ease-in-out infinite;
+    }
+
+    .desc {
+      animation: fadeInUp 0.7s ease-out 0.15s both;
+    }
+
+    /* --- Section year titles --- */
+    h2.year {
+      position: relative;
+    }
+
+    h2.year.reveal-item {
+      animation: fadeInLeft 0.6s ease-out both;
+    }
+
+    h2.year::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--global-theme-color);
+      transition: width 0.8s ease-out;
+    }
+
+    h2.year.active::after {
+      width: 100%;
+    }
+
+    /* --- Skill cards --- */
+    .skills-section .card {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .skills-section .card.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skills-section .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border-color: var(--global-theme-color) !important;
+    }
+
+    .skills-section .card .card-title i {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-section .card:hover .card-title i {
+      animation: subtleBounce 0.6s ease;
+    }
+
+    /* --- Skill list items --- */
+    .skills-section .card ul li {
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .skills-section .card.animate-in ul li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* stagger list items */
+    .skills-section .card.animate-in ul li:nth-child(1) { transition-delay: 0.08s; }
+    .skills-section .card.animate-in ul li:nth-child(2) { transition-delay: 0.14s; }
+    .skills-section .card.animate-in ul li:nth-child(3) { transition-delay: 0.20s; }
+    .skills-section .card.animate-in ul li:nth-child(4) { transition-delay: 0.26s; }
+    .skills-section .card.animate-in ul li:nth-child(5) { transition-delay: 0.32s; }
+    .skills-section .card.animate-in ul li:nth-child(6) { transition-delay: 0.38s; }
+    .skills-section .card.animate-in ul li:nth-child(7) { transition-delay: 0.44s; }
+    .skills-section .card.animate-in ul li:nth-child(8) { transition-delay: 0.50s; }
+
+    /* --- Award cards --- */
+    .award-card {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .award-card.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .award-card:hover {
+      transform: translateX(6px) !important;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border-left: 3px solid var(--global-theme-color);
+    }
+
+    /* --- Award year titles --- */
+    .award-year {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .award-year.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .award-year-title {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .award-year-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--global-theme-color), transparent);
+      transition: width 1s ease-out;
+    }
+
+    .award-year.animate-in .award-year-title::after {
+      width: 100%;
+    }
+
+    /* --- Award badge pulse on hover --- */
+    .award-badge {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .award-card:hover .award-badge {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* --- Highlight text hover --- */
+    highlight {
+      position: relative;
+      display: inline;
+    }
+
+    highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--global-theme-color);
+      transition: width 0.3s ease;
+    }
+
+    highlight:hover::after {
+      width: 100%;
+    }
+
+    /* --- Navbar link underline animation --- */
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--global-theme-color);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* --- Footer subtle pulse --- */
+    footer {
+      transition: background-color 0.4s ease;
+    }
+
+    /* --- Progress bar glow --- */
+    #progress {
+      transition: opacity 0.3s ease;
+    }
+
+    /* --- Smooth scroll behavior --- */
+    html {
+      scroll-behavior: smooth;
+    }
         </style>
 
         <div class="skills-section"><h2 class="year" id="skills">Skills & Frameworks</h2><div class="row">
@@ -581,21 +854,62 @@
   </script>
 
 
-  <!-- Scroll Reveal Animation -->
+  <!-- Scroll Reveal & Animation Engine -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // 1. Basic reveal for sections
       const sections = document.querySelectorAll('article, .post, .publications');
       sections.forEach(section => section.classList.add('reveal'));
-      
-      const observer = new IntersectionObserver((entries) => {
+
+      // Single IntersectionObserver for all animated elements
+      const animObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            const el = entry.target;
+            el.classList.add('active');
+
+            // Animate skill cards with stagger
+            if (el.classList.contains('skills-section')) {
+              const cards = el.querySelectorAll('.card');
+              cards.forEach((card, i) => {
+                setTimeout(() => card.classList.add('animate-in'), i * 120);
+              });
+            }
+
+            // Animate award years with stagger
+            if (el.classList.contains('award-year')) {
+              el.classList.add('animate-in');
+              const awardCards = el.querySelectorAll('.award-card');
+              awardCards.forEach((card, i) => {
+                setTimeout(() => card.classList.add('animate-in'), i * 100 + 150);
+              });
+            }
+
+            // Animate h2.year
+            if (el.tagName === 'H2' && el.classList.contains('year')) {
+              el.classList.add('reveal-item');
+            }
+
+            animObserver.unobserve(el);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-      
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      // Observe all animatable elements
+      document.querySelectorAll('.reveal, .skills-section, .award-year, h2.year').forEach(el => {
+        animObserver.observe(el);
+      });
+
+      // 2. Smooth link navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
     });
   </script>
 </body>
