@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <!-- Head -->
@@ -69,7 +69,7 @@
 
 <!-- Body -->
 
-<body class="fixed-top-nav ">
+<body class="fixed-top-nav "><div id="dynamic-bg"></div>
 
   <!-- Header -->
   <header>
@@ -134,7 +134,7 @@
 
     <!-- about.html -->
     <div class="post">
-      <article>
+      <article><style>.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }</style>
         <header class="post-header">
           <h1 class="post-title">Skills & Awards</h1>
           <p class="desc">My professional skills, contest results, and honors.</p>
@@ -142,13 +142,13 @@
 
         <style>
           highlight {
-            color: #008B8B;
+            color: var(--global-accent-teal);
             font-weight: 900;
             transition: all 0.3s ease;
           }
 
           html[data-theme="dark"] highlight {
-            color: #00FFFF;
+            color: var(--global-accent-cyan);
             text-shadow: 0 0 4px rgba(0, 255, 255, 0.5);
           }
 
@@ -158,16 +158,16 @@
 
           .title {
             font-weight: bold;
-            color: #E2B93B;
+            color: var(--global-theme-color);
           }
 
           .periodical em {
-            color: #8FD14F;
+            color: var(--global-accent-green);
             font-weight: 500;
           }
 
           h2.year {
-            color: #FF5252 !important;
+            color: var(--global-accent-red) !important;
             /* Standout neon/coral red */
             font-weight: 900;
             text-shadow: 0 0 5px rgba(255, 82, 82, 0.4);
@@ -180,17 +180,97 @@
             display: block !important;
             clear: both !important;
           }
+        
+    /* Awards Section Styling */
+    .award-year {
+      margin-bottom: 40px;
+    }
+
+    .award-year-title {
+      color: var(--global-theme-color);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(226, 185, 59, 0.3);
+    }
+
+    .award-card {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--global-divider-color);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .award-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border-color: var(--global-theme-color);
+    }
+
+    .award-badge {
+      flex-shrink: 0;
+      width: 120px;
+      padding: 8px 12px;
+      text-align: center;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: white;
+      margin-right: 20px;
+    }
+
+    .badge-top100 { background: var(--global-accent-lavender); }
+    .badge-second { background: var(--global-accent-red); }
+    .badge-best { background: var(--global-accent-cyan); }
+    .badge-creative { background: var(--global-accent-gold); }
+    .badge-top1 { background: var(--global-accent-teal); }
+    .badge-first { background: var(--global-accent-green); color: var(--global-text-color); }
+    .badge-cp { background: var(--global-accent-red); color: var(--global-text-color); }
+
+    .award-content {
+      flex: 1;
+    }
+
+    .award-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .award-date {
+      color: var(--global-accent-green);
+      font-size: 0.95rem;
+      margin: 0;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .award-card {
+        flex-direction: column;
+      }
+
+      .award-badge {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+
+         
         </style>
 
-
-        <div class="skills-section">
-          <h2 class="year" style="margin-top: 10px;">Skills & Frameworks</h2>
-
-          <div class="row">
+        <div class="skills-section"><h2 class="year" id="skills">Skills & Frameworks</h2><div class="row">
             <div class="col-md-6 mb-4">
               <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #E2B93B; font-weight: bold;"><i class="fas fa-code"></i>
+                  <h4 class="card-title" style="color: var(--global-theme-color); font-weight: bold;"><i class="fas fa-code"></i>
                     Programming Languages</h4>
                   <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
                     <li><strong>
@@ -210,7 +290,7 @@
             <div class="col-md-6 mb-4">
               <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #8FD14F; font-weight: bold;"><i class="fas fa-layer-group"></i>
+                  <h4 class="card-title" style="color: var(--global-accent-green); font-weight: bold;"><i class="fas fa-layer-group"></i>
                     Frameworks & Libraries</h4>
                   <ul style="list-style: none; padding-left: 0; line-height: 1.6;">
                     <li><strong>
@@ -233,7 +313,7 @@
             <div class="col-md-6 mb-4">
               <div class="card h-100" style="background: transparent; border: 1px solid var(--global-divider-color);">
                 <div class="card-body">
-                  <h4 class="card-title" style="color: #00FFFF; font-weight: bold;"><i class="fas fa-database"></i>
+                  <h4 class="card-title" style="color: var(--global-accent-cyan); font-weight: bold;"><i class="fas fa-database"></i>
                     Database & DevOps tools</h4>
                   <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
                     <li><strong>
@@ -280,136 +360,90 @@
                     <li><i class="fas fa-angle-right"
                         style="color: var(--global-theme-color); margin-right: 5px;"></i>CI/CD basics, Git flow</li>
                   </ul>
-                </div>
-              </div>
+                </div></div></div></div></div>
+                 <h2 class="year" id="awards">Awards & Achievements</h2>
+        
+        <!-- 2026 -->
+        <div class="award-year">
+          <h3 class="award-year-title"><i class="fas fa-calendar-alt"></i> 2026</h3>
+          
+          <div class="award-card">
+            <div class="award-badge badge-top100">Top 100</div>
+            <div class="award-content">
+              <h4 class="award-title"><highlight>TOP 100 Students</highlight> with outstanding academic achievement</h4>
+              <p class="award-date"><i class="far fa-calendar"></i> Jun 2026</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-badge badge-second">2nd Prize</div>
+            <div class="award-content">
+              <h4 class="award-title"><highlight>Second prize</highlight> in Student Research Competition AI-FIRST CHIPS: DRIVING THE DIGITAL TRANSFORMATION</h4>
+              <p class="award-date"><i class="far fa-calendar"></i> Apr 2026 - FPT University</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-badge badge-best">Best Presentation</div>
+            <div class="award-content">
+              <h4 class="award-title"><highlight>Best Paper Presentation</highlight></h4>
+              <p class="award-date"><i class="far fa-calendar"></i> Mar 2026 - The 7th International Conference on Machine Learning and Human-Computer Interaction, Tokyo, Japan</p>
             </div>
           </div>
         </div>
 
-        <h2 class="year" id="awards">Awards & Achievements</h2>
-        <div class="publications">
-          <h2 class="year">2026</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col-sm-2 abbr">
-                  <abbr class="badge"
-                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Top 100</abbr>
-                </div>
-                <div class="col-sm-10">
-                  <div class="title">
-                    <highlight>TOP 100 Students</highlight> with outstanding academic achievement
-                  </div>
-                  <div class="periodical"><em>Jun 2026</em></div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-sm-2 abbr">
-                  <abbr class="badge"
-                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">2nd Prize</abbr>
-                </div>
-                <div class="col-sm-10">
-                  <div class="title">
-                    <highlight>Second prize</highlight> in Student Research Competition AI-FIRST CHIPS: DRIVING THE
-                    DIGITAL TRANSFORMATION
-                  </div>
-                  <div class="periodical"><em>Apr 2026 - FPT University</em></div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-sm-2 abbr">
-                  <abbr class="badge"
-                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Best
-                    Presentation</abbr>
-                </div>
-                <div class="col-sm-10">
-                  <div class="title">
-                    <highlight>Best Paper Presentation</highlight>
-                  </div>
-                  <div class="periodical"><em>Mar 2026 - The 7th International Conference on Machine Learning and
-                      Human-Computer Interaction, Tokyo, Japan</em></div>
-                </div>
-              </div>
-            </li>
-          </ol>
-
-          <h2 class="year">2025</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col-sm-2 abbr">
-                  <abbr class="badge"
-                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Prize</abbr>
-                </div>
-                <div class="col-sm-10">
-                  <div class="title">
-                    <highlight>Creative Prize</highlight>
-                  </div>
-                  <div class="periodical"><em>SEAL Hackathon 2025 - FPT University</em></div>
-                </div>
-              </div>
-            </li>
-          </ol>
-
-          <h2 class="year">2023</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col-sm-2 abbr">
-                  <abbr class="badge"
-                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">Top 1</abbr>
-                </div>
-                <div class="col-sm-10">
-                  <div class="title">
-                    <highlight>Top 1</highlight> (500/500 points)
-                  </div>
-                  <div class="periodical"><em>NAI Challenge (semifinal of HueICT)</em></div>
-                </div>
-              </div>
-            </li>
-          </ol>
-
-          <h2 class="year">2018</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col-sm-2 abbr">
-                  <abbr class="badge"
-                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">First</abbr>
-                </div>
-                <div class="col-sm-10">
-                  <div class="title">
-                    <highlight>First Prize</highlight>
-                  </div>
-                  <div class="periodical"><em>District-level Young Informatics Contest (TINHOCTRE HCM)</em></div>
-                </div>
-              </div>
-            </li>
-          </ol>
-
-          <h2 class="year">2016 - Present</h2>
-          <ol class="bibliography">
-            <li>
-              <div class="row">
-                <div class="col-sm-2 abbr">
-                  <abbr class="badge"
-                    style="background-color: var(--global-theme-color); color: var(--global-bg-color);">CP</abbr>
-                </div>
-                <div class="col-sm-10">
-                  <div class="title">
-                    <highlight>Competitor</highlight>
-                  </div>
-                  <div class="periodical"><em>Codeforces & local STEM/English contests</em></div>
-                </div>
-              </div>
-            </li>
-          </ol>
+        <!-- 2025 -->
+        <div class="award-year">
+          <h3 class="award-year-title"><i class="fas fa-calendar-alt"></i> 2025</h3>
+          
+          <div class="award-card">
+            <div class="award-badge badge-creative">Creative Prize</div>
+            <div class="award-content">
+              <h4 class="award-title"><highlight>Creative Prize</highlight></h4>
+              <p class="award-date"><i class="far fa-calendar"></i> SEAL Hackathon 2025 - FPT University</p>
+            </div>
+          </div>
         </div>
-      </article>
+
+        <!-- 2023 -->
+        <div class="award-year">
+          <h3 class="award-year-title"><i class="fas fa-calendar-alt"></i> 2023</h3>
+          
+          <div class="award-card">
+            <div class="award-badge badge-top1">Top 1</div>
+            <div class="award-content">
+              <h4 class="award-title"><highlight>Top 1</highlight> (500/500 points)</h4>
+              <p class="award-date"><i class="far fa-calendar"></i> NAI Challenge (semifinal of HueICT)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="award-year">
+          <h3 class="award-year-title"><i class="fas fa-calendar-alt"></i> 2018</h3>
+          
+          <div class="award-card">
+            <div class="award-badge badge-first">First Prize</div>
+            <div class="award-content">
+              <h4 class="award-title"><highlight>First Prize</highlight></h4>
+              <p class="award-date"><i class="far fa-calendar"></i> District-level Young Informatics Contest (TINHOCTRE HCM)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2016 - Present -->
+        <div class="award-year">
+          <h3 class="award-year-title"><i class="fas fa-calendar-alt"></i> 2016 - Present</h3>
+          
+          <div class="award-card">
+            <div class="award-badge badge-cp">Competitor</div>
+            <div class="award-content">
+              <h4 class="award-title"><highlight>Competitor</highlight></h4>
+              <p class="award-date"><i class="far fa-calendar"></i> Codeforces & local STEM/English contests</p>
+            </div>
+          </div>
+        </div>
+</div></article>
     </div>
 
   </div>
@@ -546,6 +580,29 @@
     }
   </script>
 
+
+  <!-- Scroll Reveal Animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('article, .post, .publications');
+      sections.forEach(section => section.classList.add('reveal'));
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 
 </html>
+
+
+
+
+

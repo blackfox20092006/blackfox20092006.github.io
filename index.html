@@ -66,6 +66,17 @@
   <script src="./assets/js/dark_mode.js"></script>
 
 </head>
+      <style>
+        .cursor {
+          animation: blink 1s infinite;
+          font-weight: bold;
+        }
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+      </style>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJXK0VF9LD"></script>
 <script>
@@ -77,7 +88,7 @@
 </script>
 <!-- Body -->
 
-<body class="fixed-top-nav ">
+<body class="fixed-top-nav "><div id="dynamic-bg"></div>
 
   <!-- Header -->
   <header>
@@ -145,7 +156,7 @@
         <h1 class="post-title">
           Quang Nhan Hoang
         </h1>
-        <p class="desc">Undergraduate Research Assistant</p>
+        <p class="desc"><span id="typing-text"></span><span class="cursor">|</span></p>
       </header>
 
       <article>
@@ -236,6 +247,28 @@
         </div>
 
 
+              <!-- Statistics Section -->
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-number" data-target="6">0</div>
+            <div class="stat-label">Publications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Collaborators</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="7">0</div>
+            <div class="stat-label">Awards</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="0" id="projects-count">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+        </div>
+
+                <!-- Places Visited Section -->
+                
       </article>
 
     </div>
@@ -374,6 +407,209 @@
     }
   </script>
 
+
+  <!-- Statistics Counter Animation -->
+
+  <!-- Statistics Counter Animation with Intersection Observer -->
+  <script>
+    
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Typing animation for job titles
+        const titles = [
+          "Undergraduate Research Assistant",
+          "Undergraduate Bachelor Artificial Intelligence Student",
+          "Backend Developer",
+          "Quantum Machine Learning Researcher"
+        ];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+        const typingElement = document.getElementById("typing-text");
+        
+        function typeTitle() {
+          const currentTitle = titles[titleIndex];
+          
+          if (isDeleting) {
+            typingElement.textContent = currentTitle.substring(0, charIndex - 1);
+            charIndex--;
+            if (charIndex > 0) {
+              setTimeout(typeTitle, deletingSpeed);
+            } else {
+              // Move to next title
+              titleIndex = (titleIndex + 1) % titles.length;
+              isDeleting = false;
+              setTimeout(typeTitle, 500);
+            }
+          } else {
+            typingElement.textContent = currentTitle.substring(0, charIndex + 1);
+            charIndex++;
+            if (charIndex < currentTitle.length) {
+              setTimeout(typeTitle, typingSpeed);
+            } else {
+              setTimeout(() => {
+                isDeleting = true;
+                typeTitle();
+              }, pauseTime);
+            }
+          }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeTitle, 1000);
+
+      const counters = document.querySelectorAll('.stat-number');
+      const speed = 200;
+      window.hasAnimated = false;
+
+      const animateCounters = () => {
+        if (window.hasAnimated) return;
+        window.hasAnimated = true;
+        
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          const inc = target / speed;
+
+          const updateCount = () => {
+            const count = +counter.innerText;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + inc);
+              setTimeout(updateCount, 15);
+            } else {
+              counter.innerText = target;
+            }
+          };
+
+          updateCount();
+        });
+      }
+      // Fetch GitHub public repos count and animate
+      fetch("https://api.github.com/users/nhanhqq")
+        .then(response => response.json())
+        .then(data => {
+          const projectsEl = document.getElementById("projects-count");
+          if (projectsEl && data.public_repos) {
+            projectsEl.setAttribute("data-target", data.public_repos);
+            // If animation already triggered, manually animate this counter
+            if (window.hasAnimated) {
+              const target = data.public_repos;
+              const speed = 200;
+              const inc = target / speed;
+              const updateCount = () => {
+                const count = +projectsEl.innerText;
+                if (count < target) {
+                  projectsEl.innerText = Math.ceil(count + inc);
+                  setTimeout(updateCount, 15);
+                } else {
+                  projectsEl.innerText = target;
+                }
+              };
+              updateCount();
+            }
+          }
+        })
+        .catch(err => console.log("GitHub API error:", err));
+;
+
+      // Trigger when stats section is visible
+      const statsContainer = document.querySelector('.stats-container');
+      if (statsContainer) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateCounters();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.5 });
+        
+        observer.observe(statsContainer);
+      }
+    });
+  </script>
+
+  <!-- Scroll Reveal Animation -->
+  <script>
+    
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Typing animation for job titles
+        const titles = [
+          "Undergraduate Research Assistant",
+          "Undergraduate Bachelor Artificial Intelligence Student",
+          "Backend Developer",
+          "Quantum Machine Learning Researcher"
+        ];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+        const typingElement = document.getElementById("typing-text");
+        
+        function typeTitle() {
+          const currentTitle = titles[titleIndex];
+          
+          if (isDeleting) {
+            typingElement.textContent = currentTitle.substring(0, charIndex - 1);
+            charIndex--;
+            if (charIndex > 0) {
+              setTimeout(typeTitle, deletingSpeed);
+            } else {
+              // Move to next title
+              titleIndex = (titleIndex + 1) % titles.length;
+              isDeleting = false;
+              setTimeout(typeTitle, 500);
+            }
+          } else {
+            typingElement.textContent = currentTitle.substring(0, charIndex + 1);
+            charIndex++;
+            if (charIndex < currentTitle.length) {
+              setTimeout(typeTitle, typingSpeed);
+            } else {
+              setTimeout(() => {
+                isDeleting = true;
+                typeTitle();
+              }, pauseTime);
+            }
+          }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeTitle, 1000);
+
+      // Add reveal class to sections
+      const sections = document.querySelectorAll('.stats-container, .places-section, .skills-section, article');
+      sections.forEach(section => section.classList.add('reveal'));
+      
+      // Intersection Observer for scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 
 </html>
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Variables used throughout the theme.
  * To adjust anything, simply edit the variables below and rebuild the theme.
  ******************************************************************************/
@@ -6,24 +6,18 @@
  * Themes
  ******************************************************************************/
 :root {
-  --global-bg-color: #faf8f4;
-  --global-code-bg-color: rgba(156, 142, 199, 0.06);
-  --global-text-color: #3d3f52;
-  --global-text-color-light: #8b899e;
-  --global-theme-color: #9c8ec7;
-  --global-hover-color: #8472b5;
+  --global-bg-color: #ffffff;
+  --global-code-bg-color: rgba(181, 9, 172, 0.05);
+  --global-text-color: #000000;
+  --global-text-color-light: #828282;
+  --global-theme-color: #B509AC;
+  --global-hover-color: #B509AC;
   --global-hover-text-color: #ffffff;
-  --global-footer-bg-color: #3d3f52;
-  --global-footer-text-color: #e8e5f0;
-  --global-footer-link-color: #c4b8dd;
-  --global-distill-app-color: #8b899e;
-  --global-divider-color: rgba(156, 142, 199, 0.15);
-  --global-accent-gold: #f5c542;
-  --global-accent-green: #8fd14f;
-  --global-accent-cyan: #60e1e1;
-  --global-accent-red: #f87070;
-  --global-accent-teal: #4ecdc4;
-  --global-accent-lavender: #c4b5fd;
+  --global-footer-bg-color: #1C1C1D;
+  --global-footer-text-color: #e8e8e8;
+  --global-footer-link-color: #ffffff;
+  --global-distill-app-color: #828282;
+  --global-divider-color: rgba(0,0,0,.1);
   --global-card-bg-color: #ffffff;
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -54,25 +48,19 @@
 }
 
 html[data-theme=dark] {
-  --global-bg-color: #1e1d2f;
-  --global-code-bg-color: #282640;
-  --global-text-color: #dcd8ee;
-  --global-text-color-light: #928fb0;
-  --global-theme-color: #b8aae0;
-  --global-hover-color: #cdc2ee;
-  --global-hover-text-color: #1e1d2f;
-  --global-footer-bg-color: #282640;
-  --global-footer-text-color: #dcd8ee;
-  --global-footer-link-color: #b8aae0;
-  --global-distill-app-color: #928fb0;
-  --global-divider-color: #3c3956;
-  --global-accent-gold: #fbbf24;
-  --global-accent-green: #a3e635;
-  --global-accent-cyan: #67e8f9;
-  --global-accent-red: #fb7185;
-  --global-accent-teal: #5eead4;
-  --global-accent-lavender: #c4b5fd;
-  --global-card-bg-color: #282640;
+  --global-bg-color: #1C1C1D;
+  --global-code-bg-color: #2c3237;
+  --global-text-color: #e8e8e8;
+  --global-text-color-light: #e8e8e8;
+  --global-theme-color: #2698BA;
+  --global-hover-color: #2698BA;
+  --global-hover-text-color: #ffffff;
+  --global-footer-bg-color: #e8e8e8;
+  --global-footer-text-color: #1C1C1D;
+  --global-footer-link-color: #000000;
+  --global-distill-app-color: #e8e8e8;
+  --global-divider-color: #424246;
+  --global-card-bg-color: #212529;
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
   --global-tip-block-text: #215d42;
@@ -512,10 +500,10 @@ footer.sticky-bottom {
   color: var(--global-text-color);
 }
 .pagination .page-item .page-link:hover {
-  color: var(--global-text-color);
+  color: #000000;
 }
 .pagination .page-item.active .page-link {
-  color: var(--global-hover-text-color);
+  color: #ffffff;
   background-color: var(--global-theme-color);
 }
 .pagination .page-item.active .page-link:hover {
@@ -656,7 +644,7 @@ footer.sticky-bottom {
 }
 .publications ol.bibliography li .badges span {
   display: inline-block;
-  color: var(--global-text-color);
+  color: #000000;
   height: 100%;
   padding-right: 0.5rem;
   vertical-align: middle;
@@ -1087,7 +1075,7 @@ body {
     height: 100vh;
     z-index: -9999;
     /* We'll set a dark gradient that works nicely as a base */
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+    background: linear-gradient(135deg, #121212, #240b36, #c31432, #121212);
     background-size: 400% 400%;
     transition: background-position 0.1s ease-out;
 }
@@ -1095,7 +1083,7 @@ body {
 html[data-theme="light"] #dynamic-bg,
 html[data-theme="light"] body {
     /* If light mode is toggled, an elegant light gradient */
-    background: linear-gradient(135deg, #fef9ff, #f3e8ff, #fae8ff, #f0f4ff);
+    background: linear-gradient(135deg, #fdfbfb, #ebedee, #fdfbfb, #e0c3fc);
     background-size: 400% 400%;
 }
 
@@ -1119,436 +1107,3 @@ html[data-theme="light"] .click-wave {
         opacity: 0;
     }
 }
-
-
-/* ===== STATISTICS SECTION ===== */
-.stats-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 3rem 0;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-html[data-theme="light"] .stats-container {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.stat-item {
-    text-align: center;
-    min-width: 120px;
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--global-theme-color);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: var(--global-text-color-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* ===== TRAVEL MAP / PLACES VISITED ===== */
-.places-section {
-    margin: 3rem 0;
-}
-
-.places-section h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-}
-
-.places-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.place-card {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    aspect-ratio: 1;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.place-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.place-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.place-card .place-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    padding: 1rem 0.5rem 0.5rem;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-align: center;
-}
-
-/* ===== IMPROVED NAVIGATION ===== */
-.navbar {
-    backdrop-filter: blur(10px);
-    background-color: rgba(28, 28, 29, 0.8) !important;
-}
-
-html[data-theme="light"] .navbar {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-}
-
-/* ===== ENHANCED CARDS ===== */
-.card {
-    border: none;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-html[data-theme="dark"] .card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ===== BUTTON ENHANCEMENTS ===== */
-.btn {
-    border-radius: 8px;
-    padding: 0.6rem 1.5rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* ===== ENHANCED SKILL CARDS ===== */
-.skills-section .card {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.skills-section .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.skills-section .card:hover::before {
-    left: 100%;
-}
-
-.skills-section .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-}
-
-html[data-theme="dark"] .skills-section .card {
-    background: rgba(255,255,255,0.03) !important;
-    border: 1px solid rgba(255,255,255,0.15) !important;
-}
-
-html[data-theme="light"] .skills-section .card {
-    background: rgba(0,0,0,0.02) !important;
-    border: 1px solid rgba(0,0,0,0.1) !important;
-}
-
-/* ===== AWARD ENTRIES ===== */
-.publications .bibliography li {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.publications .bibliography li:hover {
-    background: rgba(255,255,255,0.05);
-    transform: translateX(4px);
-}
-
-html[data-theme="light"] .publications .bibliography li:hover {
-    background: rgba(0,0,0,0.03);
-}
-
-/* ===== YEAR HEADERS ===== */
-h2.year {
-    position: relative;
-    padding-left: 1rem;
-}
-
-h2.year::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 70%;
-    background: var(--global-theme-color);
-    border-radius: 2px;
-}
-
-/* ===== SMOOTH SCROLL ===== */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ===== FADE IN ANIMATION ===== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-article, .post-header, .skills-section, .places-section {
-    animation: fadeIn 0.6s ease-out;
-}
-
-/* ===== PROFESSIONAL OVERVIEW SECTION ===== */
-.overview-section {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.1), rgba(51, 65, 85, 0.1));
-    border-radius: 16px;
-    border: 1px solid rgba(148, 163, 184, 0.2);
-}
-
-html[data-theme="light"] .overview-section {
-    background: linear-gradient(135deg, rgba(241, 245, 249, 0.8), rgba(226, 232, 240, 0.8));
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.overview-section h3 {
-    color: var(--global-theme-color);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-/* ===== PROFILE IMAGE ENHANCEMENT ===== */
-.profile img {
-    border-radius: 16px !important;
-    border: 4px solid var(--global-theme-color);
-    box-shadow: 0 12px 32px rgba(167, 139, 250, 0.3);
-    transition: all 0.3s ease;
-    max-width: 180px !important;
-}
-
-.profile img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-}
-
-/* ===== HEADER ENHANCEMENTS ===== */
-.post-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--global-theme-color), #6366f1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.desc {
-    font-size: 1.1rem;
-    color: var(--global-text-color-light);
-    margin-bottom: 1.5rem;
-}
-
-/* ===== ENHANCED PUBLICATION ENTRIES ===== */
-.publications .bibliography li {
-    background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
-    border-left: 3px solid var(--global-theme-color);
-    transition: all 0.3s ease;
-}
-
-html[data-theme="light"] .publications .bibliography li {
-    background: linear-gradient(135deg, rgba(0,0,0,0.01), rgba(0,0,0,0.03));
-}
-
-.publications .bibliography li:hover {
-    border-left-color: #6366f1;
-    transform: translateX(8px);
-}
-
-/* ===== INTERACTIVE ELEMENTS ===== */
-a {
-    position: relative;
-    text-decoration: none;
-}
-
-a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--global-theme-color);
-    transition: width 0.3s ease;
-}
-
-a:hover::after {
-    width: 100%;
-}
-
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
-@media (max-width: 768px) {
-    .stats-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .stat-number {
-        font-size: 2.5rem;
-    }
-    
-    .places-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
-    
-    .post-title {
-        font-size: 2rem;
-    }
-}
-
-/* ===== SCROLL REVEAL ANIMATION ===== */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* ===== PLACES TIMELINE ===== */
-.places-timeline {
-    margin-top: 2rem;
-    position: relative;
-    padding-left: 2rem;
-}
-
-.places-timeline::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--global-theme-color), transparent);
-}
-
-.place-item {
-    position: relative;
-    margin-bottom: 1.5rem;
-    padding-left: 1rem;
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: slideIn 0.6s ease-out forwards;
-}
-
-.place-item:nth-child(1) { animation-delay: 0.1s; }
-.place-item:nth-child(2) { animation-delay: 0.2s; }
-.place-item:nth-child(3) { animation-delay: 0.3s; }
-.place-item:nth-child(4) { animation-delay: 0.4s; }
-.place-item:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.place-pin {
-    position: absolute;
-    left: -2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    background: var(--global-theme-color);
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.2);
-}
-
-.place-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(167, 139, 250, 0.05);
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    border-radius: 12px;
-    padding: 0.75rem;
-    transition: all 0.3s ease;
-}
-
-.place-content:hover {
-    transform: translateX(8px);
-    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.15);
-    border-color: rgba(167, 139, 250, 0.4);
-}
-
-.place-content img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.place-info strong {
-    display: block;
-    color: var(--global-text-color);
-    font-size: 1rem;
-}
-
-.place-location {
-    font-size: 0.85rem;
-    color: var(--global-theme-color);
-}
-

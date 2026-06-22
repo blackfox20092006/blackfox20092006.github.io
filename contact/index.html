@@ -67,7 +67,7 @@
 
 <!-- Body -->
 
-<body class="fixed-top-nav ">
+<body class="fixed-top-nav "><div id="dynamic-bg"></div>
 
   <!-- Header -->
   <header>
@@ -132,11 +132,67 @@
 
     <!-- about.html -->
     <div class="post">
-<article>
+<article><style>.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }</style>
           <header class="post-header">
             <h1 class="post-title">Contact</h1>
             <p class="desc">Please feel free to reach out to me via the following channels.</p>
           </header>
+
+          
+          <style>
+            .contact-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            .contact-card {
+                background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(139, 92, 246, 0.05));
+                border: 1px solid rgba(167, 139, 250, 0.2);
+                border-radius: 16px;
+                padding: 1.5rem;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            .contact-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 24px rgba(167, 139, 250, 0.2);
+                border-color: rgba(167, 139, 250, 0.4);
+            }
+            .contact-card i {
+                font-size: 2rem;
+                color: var(--global-theme-color);
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(167, 139, 250, 0.1);
+                border-radius: 12px;
+            }
+            .contact-card .info h4 {
+                margin: 0;
+                font-size: 1rem;
+                color: var(--global-text-color);
+            }
+            .contact-card .info p, .contact-card .info a {
+                margin: 4px 0 0;
+                font-size: 0.9rem;
+                color: var(--global-text-color-light);
+            }
+            html[data-theme="light"] .contact-card {
+                background: linear-gradient(135deg, rgba(167, 139, 250, 0.05), rgba(139, 92, 246, 0.02));
+                border-color: rgba(167, 139, 250, 0.3);
+            }
+            .email-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 8px;
+            }
+          </style>
 
           <style>
             .contact-list {
@@ -180,32 +236,55 @@
             }
           </style>
 
-          <div class="clearfix mt-4">
-              <ul class="contact-list">
-                  <li>
-                      <i class="fas fa-envelope"></i> <strong>Email</strong><br>
-                      <div class="ml-4 pl-2 mt-2">
-                        <span class="email-badge"><a href="mailto:xxhoangquangnhanxx@gmail.com">xxhoangquangnhanxx@gmail.com</a></span>
-                        <span class="email-badge"><a href="mailto:nhanhqse204283@fpt.edu.vn">nhanhqse204283@fpt.edu.vn</a></span>
+          
+          <div class="contact-grid">
+              <div class="contact-card">
+                  <i class="fas fa-envelope"></i>
+                  <div class="info">
+                      <h4>Email</h4>
+                      <div class="email-badges">
+                          <span class="email-badge"><a href="mailto:xxhoangquangnhanxx@gmail.com">xxhoangquangnhanxx@gmail.com</a></span>
+                          <span class="email-badge"><a href="mailto:nhanhqse204283@fpt.edu.vn">nhanhqse204283@fpt.edu.vn</a></span>
                       </div>
-                  </li>
-                  <li>
-                      <i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=cSC333EAAAAJ&hl=vi" target="_blank"><strong>Google Scholar</strong></a>
-                  </li>
-                  <li>
-                      <i class="ai ai-orcid"></i> <a href="https://orcid.org/0009-0003-1597-6890" target="_blank"><strong>ORCID</strong>: 0009-0003-1597-6890</a>
-                  </li>
-                  <li>
-                      <i class="fab fa-github"></i> <a href="https://github.com/nhanhqq" target="_blank"><strong>GitHub</strong>: nhanhqq</a>
-                  </li>
-                  <li>
-                      <i class="fas fa-globe"></i> <a href="https://nhanhqq.github.io" target="_blank"><strong>Personal Page</strong>: nhanhqq.github.io</a>
-                  </li>
-                  <li>
-                      <i class="fab fa-facebook"></i> <a href="https://www.facebook.com/quangnhan2o6" target="_blank"><strong>Facebook</strong>: quangnhan2o6</a>
-                  </li>
-              </ul>
+                  </div>
+              </div>
+              <div class="contact-card">
+                  <i class="ai ai-google-scholar"></i>
+                  <div class="info">
+                      <h4>Google Scholar</h4>
+                      <a href="https://scholar.google.com/citations?user=cSC333EAAAAJ&hl=vi" target="_blank">View Profile ?</a>
+                  </div>
+              </div>
+              <div class="contact-card">
+                  <i class="ai ai-orcid"></i>
+                  <div class="info">
+                      <h4>ORCID</h4>
+                      <a href="https://orcid.org/0009-0003-1597-6890" target="_blank">0009-0003-1597-6890 ?</a>
+                  </div>
+              </div>
+              <div class="contact-card">
+                  <i class="fab fa-github"></i>
+                  <div class="info">
+                      <h4>GitHub</h4>
+                      <a href="https://github.com/nhanhqq" target="_blank">@nhanhqq ?</a>
+                  </div>
+              </div>
+              <div class="contact-card">
+                  <i class="fas fa-globe"></i>
+                  <div class="info">
+                      <h4>Personal Page</h4>
+                      <a href="https://nhanhqq.github.io" target="_blank">nhanhqq.github.io ?</a>
+                  </div>
+              </div>
+              <div class="contact-card">
+                  <i class="fab fa-facebook"></i>
+                  <div class="info">
+                      <h4>Facebook</h4>
+                      <a href="https://www.facebook.com/quangnhan2o6" target="_blank">@quangnhan2o6 ?</a>
+                  </div>
+              </div>
           </div>
+        
         </article>
 
     </div>
@@ -344,6 +423,26 @@
     }
   </script>
 
+
+  <!-- Scroll Reveal Animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('article, .post, .publications');
+      sections.forEach(section => section.classList.add('reveal'));
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 
 </html>
+
+
